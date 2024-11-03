@@ -28,6 +28,8 @@ public class LogicalInferenceEngine implements InferenceEngine {
         for (InferenceRule rule : inferenceRules) {
             if (rule.matches(expressions.get(0), expressions.get(1)))
                 return rule.apply(expressions.get(0), expressions.get(1));
+            if (rule.matches(expressions.get(1), expressions.get(0)))
+                return rule.apply(expressions.get(1), expressions.get(0));
         }
         return null;
     }
