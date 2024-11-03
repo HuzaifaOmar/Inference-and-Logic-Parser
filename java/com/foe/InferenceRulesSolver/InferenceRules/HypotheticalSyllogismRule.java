@@ -1,8 +1,7 @@
-package com.huthaifa.InferenceEngine.InferenceRules;
+package com.foe.InferenceRulesSolver.InferenceRules;
 
-import com.huthaifa.Expression.Expression;
-import com.huthaifa.Expression.LogicalExpression;
-import com.huthaifa.InferenceEngine.InferenceRule;
+import com.foe.Expression.Expression;
+import com.foe.Expression.LogicalExpression;
 
 public class HypotheticalSyllogismRule implements InferenceRule {
 

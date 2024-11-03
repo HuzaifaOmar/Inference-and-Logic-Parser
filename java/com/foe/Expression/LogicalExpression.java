@@ -1,4 +1,4 @@
-package com.huthaifa.Expression;
+package com.foe.Expression;
 
 public class LogicalExpression implements Expression {
     String representation = "";

@@ -1,7 +1,7 @@
-package com.huthaifa.InferenceEngine;
+package com.foe.InferenceRulesSolver.InferenceRules;
 
 
-import com.huthaifa.Expression.Expression;
+import com.foe.Expression.Expression;
 
 public interface InferenceRule {
     boolean matches(Expression exp1, Expression exp2);
