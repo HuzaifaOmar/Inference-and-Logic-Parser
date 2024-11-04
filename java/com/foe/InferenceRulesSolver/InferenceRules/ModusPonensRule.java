@@ -5,6 +5,11 @@ import com.foe.Expression.LogicalExpression;
 
 
 public class ModusPonensRule implements InferenceRule {
+
+    @Override
+    public String getName() {
+        return "Modus Ponens Rule";
+    }
     @Override
     public boolean matches(Expression premiseExpression, Expression conclusionExpression) {
         String premiseRepresentation = premiseExpression.getRepresentation();

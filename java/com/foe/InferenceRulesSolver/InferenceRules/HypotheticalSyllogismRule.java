@@ -5,7 +5,10 @@ import com.foe.Expression.LogicalExpression;
 
 public class HypotheticalSyllogismRule implements InferenceRule {
 
-
+    @Override
+    public String getName() {
+        return "Hypothetical Syllogism Rule";
+    }
     @Override
     public boolean matches(Expression exp1, Expression exp2) {
         String representation1 = exp1.getRepresentation();

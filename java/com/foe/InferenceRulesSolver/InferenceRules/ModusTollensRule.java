@@ -4,6 +4,11 @@ import com.foe.Expression.LogicalExpression;
 import com.foe.Expression.Expression;
 
 public class ModusTollensRule implements InferenceRule {
+
+    @Override
+    public String getName() {
+        return "Modus Tollens Rule";
+    }
     @Override
     public boolean matches(Expression premiseExpression, Expression negatedConclusionExpression) {
         String premiseRepresentation = premiseExpression.getRepresentation();

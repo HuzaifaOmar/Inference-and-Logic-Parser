@@ -4,6 +4,11 @@ import com.foe.Expression.Expression;
 import com.foe.Expression.LogicalExpression;
 
 public class DisjunctiveSyllogismRule implements InferenceRule {
+
+    @Override
+    public String getName() {
+        return "Disjunctive Syllogism Rule";
+    }
     @Override
     public boolean matches(Expression premise, Expression negatedConclusion) {
         String premiseRepr = premise.getRepresentation();

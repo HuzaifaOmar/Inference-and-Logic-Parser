@@ -5,6 +5,11 @@ import com.foe.Expression.Expression;
 
 
 public class ResolutionRule implements InferenceRule {
+
+    @Override
+    public String getName() {
+        return "Resolution Rule";
+    }
     private boolean checkResolution(String var, String exp2var1, String exp2var2) {
         String negatedVar = var.startsWith("~") ? var.substring(1) : "~" + var;
         return exp2var1.equals(negatedVar) || exp2var2.equals(negatedVar);
