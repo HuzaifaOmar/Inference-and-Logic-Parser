@@ -8,5 +8,5 @@ public interface InferenceEngine {
 
     void addExpression(Expression exp);
 
-    Expression applyRules();
+    InferenceResult applyRules();
 }

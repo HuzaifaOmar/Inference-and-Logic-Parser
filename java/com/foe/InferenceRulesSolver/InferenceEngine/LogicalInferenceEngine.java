@@ -1,6 +1,5 @@
 package com.foe.InferenceRulesSolver.InferenceEngine;
 
-import com.foe.Expression.InferredExpression;
 import com.foe.InferenceRulesSolver.InferenceRules.InferenceRule;
 import com.foe.Expression.Expression;
 
@@ -23,12 +22,12 @@ public class LogicalInferenceEngine implements InferenceEngine {
     }
 
     @Override
-    public Expression applyRules() {
+    public InferenceResult applyRules() {
         for (InferenceRule rule : inferenceRules) {
             if (rule.matches(expressions.get(0), expressions.get(1)))
-                return new InferredExpression(rule.apply(expressions.get(0), expressions.get(1)).getRepresentation(), rule.getName());
+                return new InferenceResult(rule.apply(expressions.get(0), expressions.get(1)), rule.getName());
             if (rule.matches(expressions.get(1), expressions.get(0)))
-                return new InferredExpression(rule.apply(expressions.get(1), expressions.get(0)).getRepresentation(), rule.getName());
+                return new InferenceResult(rule.apply(expressions.get(1), expressions.get(0)), rule.getName());
         }
         return null;
     }
