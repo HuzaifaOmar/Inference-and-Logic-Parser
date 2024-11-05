@@ -1,4 +1,4 @@
-package com.foe.InputValidator;
+package com.foe.expressionSolver.InputValidator;
 
 import com.foe.Expression.Expression;
 

@@ -1,7 +1,7 @@
-package com.foe.LogicalExpressionSolver;
+package com.foe.expressionSolver.LogicalExpressionSolver;
 
 import com.foe.Expression.Expression;
-import com.foe.utilities.StringUtility;
+import com.foe.expressionSolver.utilities.StringUtility;
 
 import java.util.Map;
 import java.util.Stack;
@@ -80,11 +80,11 @@ public class LogicalExpressionEvaluator implements LogicalExpressionSolver {
 
     int precedence(char op){
         return switch (op) {
+            case '(' -> 0;
             case '>' -> 1;
             case 'v' -> 2;
             case '^' -> 3;
             case '~' -> 4;
-            case '(' -> 5;
             default -> throw new IllegalArgumentException("Invalid operator: " + op);
         };
     }
