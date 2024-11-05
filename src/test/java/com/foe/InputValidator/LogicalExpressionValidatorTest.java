@@ -1,6 +1,8 @@
 package com.foe.InputValidator;
 
 import com.foe.Expression.LogicalExpression;
+import com.foe.expressionSolver.InputValidator.InputValidator;
+import com.foe.expressionSolver.InputValidator.LogicalExpressionInputValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

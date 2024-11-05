@@ -3,7 +3,7 @@ package com.foe.InferenceRulesSolver.InferenceEngine;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.foe.Expression.LogicalExpression;
-import com.foe.InferenceRulesSolver.InferenceRules.*;
+import com.foe.InferenceRulesSolver.InferenceRules.impl.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -80,6 +80,6 @@ public class LogicalInferenceEngineTest {
         engine.addExpression(new LogicalExpression("P > Q"));
         engine.addExpression(new LogicalExpression("R > S"));
         InferenceResult result = engine.applyRules();
-        assertNull(result);
+        assertEquals(result.getUsedRule(), "no matching rule");
     }
 }

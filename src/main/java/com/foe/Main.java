@@ -1,24 +1,33 @@
 package com.foe;
 
-import com.foe.Expression.Expression;
 import com.foe.Expression.LogicalExpression;
-import com.foe.InputValidator.LogicalExpressionInputValidator;
-import com.foe.LogicalExpressionSolver.LogicalExpressionEvaluator;
-import com.foe.LogicalExpressionSolver.LogicalExpressionSolver;
+import com.foe.InferenceRulesSolver.InferenceEngine.InferenceResult;
+import com.foe.InferenceRulesSolver.InferenceEngine.LogicalInferenceEngine;
+import com.foe.InferenceRulesSolver.InferenceRules.impl.*;
+import com.foe.expressionSolver.LogicalExpressionSolver.LogicalExpressionEvaluator;
 
-import java.util.HashMap;
-import java.util.Map;
 
 public class Main {
+
+    private static LogicalInferenceEngine engine;
+
+    public static void setUp() {
+        engine = new LogicalInferenceEngine();
+        engine.addRule(new ModusPonensRule());
+        engine.addRule(new ModusTollensRule());
+        engine.addRule(new HypotheticalSyllogismRule());
+        engine.addRule(new DisjunctiveSyllogismRule());
+        engine.addRule(new ResolutionRule());
+    }
+
     public static void main(String[] args) {
 
-        LogicalExpressionSolver solver = new LogicalExpressionEvaluator();
-        Expression exp = new LogicalExpression("P^Q^S>R") ;
-        Map<Character, Boolean> map = new HashMap<>();
-        map.put('P', false);
-        map.put('Q', true);
-        map.put('S', true);
-        map.put('R', true);
-        System.out.println(solver.evaluateExpression(exp, map));
+        setUp() ;
+
+        engine.addExpression(new LogicalExpression("P > Q"));
+        engine.addExpression(new LogicalExpression("R > S"));
+        InferenceResult result = engine.applyRules();
+        System.out.println(result.toString());
+
     }
 }

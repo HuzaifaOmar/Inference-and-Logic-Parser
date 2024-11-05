@@ -1,7 +1,8 @@
-package com.foe.InferenceRulesSolver.InferenceRules;
+package com.foe.InferenceRulesSolver.InferenceRules.impl;
 
 import com.foe.Expression.Expression;
 import com.foe.Expression.LogicalExpression;
+import com.foe.InferenceRulesSolver.InferenceRules.InferenceRule;
 
 
 public class ModusPonensRule implements InferenceRule {

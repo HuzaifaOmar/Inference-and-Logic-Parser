@@ -1,4 +1,4 @@
-package com.foe.utilities;
+package com.foe.expressionSolver.utilities;
 
 import java.util.Stack;
 

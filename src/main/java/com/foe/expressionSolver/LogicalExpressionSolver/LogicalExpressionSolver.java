@@ -1,4 +1,4 @@
-package com.foe.LogicalExpressionSolver;
+package com.foe.expressionSolver.LogicalExpressionSolver;
 
 import com.foe.Expression.Expression;
 
