@@ -7,7 +7,7 @@ public class ModusTollensRule implements InferenceRule {
 
     @Override
     public String getName() {
-        return "Modus Tollens Rule";
+        return "Modus Tollens";
     }
     @Override
     public boolean matches(Expression premiseExpression, Expression negatedConclusionExpression) {

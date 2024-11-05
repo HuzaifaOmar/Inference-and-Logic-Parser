@@ -85,7 +85,7 @@ public class LogicalExpressionInputValidator implements InputValidator {
     }
 
     private boolean isOperatorWithoutOperand(char currentChar, Stack<Character> operatorStack) {
-        return isOperator(currentChar) && operatorStack.isEmpty();
+        return currentChar != '~' && isOperator(currentChar) && operatorStack.isEmpty();
     }
 
     private boolean isVariableAfterClosedParenthesis(char currentChar, Stack<Character> operatorStack) {
@@ -93,10 +93,12 @@ public class LogicalExpressionInputValidator implements InputValidator {
     }
 
     @Override
-    public boolean validate(Expression expression) {
+    public boolean isValid(Expression expression) {
         String input = expression.getRepresentation();
+        if(input == null || input.isEmpty()) return false;
+
         String cleanedExpression = input.replaceAll("\\s+", "");
-        boolean ret = hasValidParentheses(cleanedExpression) && !cleanedExpression.isEmpty();
+        boolean ret = hasValidParentheses(cleanedExpression);
         ret &= !containsUnsupportedCharacter(cleanedExpression);
         ret &= !hasConsecutiveOperators(cleanedExpression);
         ret &= !hasConsecutiveVariables(cleanedExpression);

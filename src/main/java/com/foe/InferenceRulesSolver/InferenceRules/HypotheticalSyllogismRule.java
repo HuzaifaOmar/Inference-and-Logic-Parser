@@ -7,7 +7,7 @@ public class HypotheticalSyllogismRule implements InferenceRule {
 
     @Override
     public String getName() {
-        return "Hypothetical Syllogism Rule";
+        return "Hypothetical Syllogism";
     }
     @Override
     public boolean matches(Expression exp1, Expression exp2) {

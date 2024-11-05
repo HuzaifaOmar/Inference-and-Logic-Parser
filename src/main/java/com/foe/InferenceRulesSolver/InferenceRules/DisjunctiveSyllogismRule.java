@@ -7,7 +7,7 @@ public class DisjunctiveSyllogismRule implements InferenceRule {
 
     @Override
     public String getName() {
-        return "Disjunctive Syllogism Rule";
+        return "Disjunctive Syllogism";
     }
     @Override
     public boolean matches(Expression premise, Expression negatedConclusion) {

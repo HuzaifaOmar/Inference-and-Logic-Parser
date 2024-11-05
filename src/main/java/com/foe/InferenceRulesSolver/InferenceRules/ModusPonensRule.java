@@ -8,7 +8,7 @@ public class ModusPonensRule implements InferenceRule {
 
     @Override
     public String getName() {
-        return "Modus Ponens Rule";
+        return "Modus Ponens";
     }
     @Override
     public boolean matches(Expression premiseExpression, Expression conclusionExpression) {

@@ -8,7 +8,7 @@ public class ResolutionRule implements InferenceRule {
 
     @Override
     public String getName() {
-        return "Resolution Rule";
+        return "Resolution";
     }
     private boolean checkResolution(String var, String exp2var1, String exp2var2) {
         String negatedVar = var.startsWith("~") ? var.substring(1) : "~" + var;
@@ -20,6 +20,8 @@ public class ResolutionRule implements InferenceRule {
         String[] exp1Vars = trimVariables(exp1.getRepresentation().split("v"));
         String[] exp2Vars = trimVariables(exp2.getRepresentation().split("v"));
 
+        if (exp1Vars.length != 2 || exp2Vars.length != 2)
+            return false;
         return checkResolution(exp1Vars[0], exp2Vars[0], exp2Vars[1]) ||
                 checkResolution(exp1Vars[1], exp2Vars[0], exp2Vars[1]);
     }

@@ -4,5 +4,5 @@ import com.foe.Expression.Expression;
 
 public interface InputValidator {
 
-    public boolean validate(Expression input);
+    public boolean isValid(Expression input);
 }
