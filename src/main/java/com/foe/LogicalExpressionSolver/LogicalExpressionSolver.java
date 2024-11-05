@@ -2,6 +2,8 @@ package com.foe.LogicalExpressionSolver;
 
 import com.foe.Expression.Expression;
 
-interface LogicalExpressionSolver {
-    boolean evaluateExpression(Expression expression);
+import java.util.Map;
+
+public interface LogicalExpressionSolver {
+    boolean evaluateExpression(Expression expression, Map<Character, Boolean> variables);
 }
