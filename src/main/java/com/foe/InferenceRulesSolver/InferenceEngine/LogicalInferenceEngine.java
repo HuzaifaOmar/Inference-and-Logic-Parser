@@ -29,6 +29,6 @@ public class LogicalInferenceEngine implements InferenceEngine {
             if (rule.matches(expressions.get(1), expressions.get(0)))
                 return new InferenceResult(rule.apply(expressions.get(1), expressions.get(0)), rule.getName());
         }
-        return null;
+        return new InferenceResult().empty() ;
     }
 }

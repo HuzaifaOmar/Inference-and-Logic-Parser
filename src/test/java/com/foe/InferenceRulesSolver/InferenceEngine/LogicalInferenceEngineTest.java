@@ -80,6 +80,6 @@ public class LogicalInferenceEngineTest {
         engine.addExpression(new LogicalExpression("P > Q"));
         engine.addExpression(new LogicalExpression("R > S"));
         InferenceResult result = engine.applyRules();
-        assertNull(result);
+        assertEquals(result.getUsedRule(), "no matching rule");
     }
 }
